@@ -1,0 +1,170 @@
+<html>
+
+<head>
+
+<title>Xxx</title>
+
+<style>
+    <!--.main {
+        border: 1px solid green;
+        float: left;
+        min-height: 180px;
+        margin: 2px;
+        padding: 10px;
+        min-width: 117px;
+        position:relative;
+    }
+    .gfg {
+        font-size:40px;
+        color:green;
+        font-weight:bold;
+        tect-align:center
+    }
+    .geeks {
+        text-align:center;
+    }-->
+    html  {
+        font-size: 250%
+    }
+    #navigation {
+        position:absolute;
+        bottom:0;
+        left:0;
+    }
+
+
+    a.button3{
+        display:inline-block;
+        padding:0.3em 1.2em;
+        margin:0 0.3em 0.3em 0;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#FFFFFF;
+        background-color:#4eb5f1;
+        text-align:center;
+        transition: all 0.2s;
+    }
+    a.button3:hover{
+        background-color:#4095c6;
+    }
+    @media all and (max-width:30em){
+        a.button3{
+            display:block;
+            margin:0.2em auto;
+        }
+    }
+
+</style>
+
+
+
+<script type="module">
+    import riverfolk from "./riverfolk.json" assert { type: "json" };
+
+    window.factions = [riverfolk]
+</script>
+
+
+<script>
+    var factions = window.factions
+
+    var global_faction = 0
+    var global_phase = 0
+    var global_step = 0
+
+
+
+    function set_state(s)
+    {
+        global_step = s;
+
+        if (global_step < 0)
+        {
+            --global_phase;
+
+            if (global_phase < 0)
+            {
+                global_phase = 0;
+                global_step = 0
+            }
+            else
+            {
+                global_step = factions[global_faction].phases[global_phase].steps.length-1;
+            }
+        }
+        else if (global_step >= factions[global_faction].phases[global_phase].steps.length)
+        {
+            ++global_phase;
+
+            if (global_phase >= factions[global_faction].phases.length)
+            {
+                global_phase = 1; //Skip setup
+            }
+
+            global_step = 0;
+        }
+
+        console.log(global_phase);
+        console.log(global_step);
+
+        var faction = factions[global_faction];
+        var phase = faction.phases[global_phase];
+        var step = phase.steps[global_step];
+
+        document.getElementById('faction-title-content').replaceChildren([]);
+
+        var h1 = document.createElement("h1");
+        h1.appendChild(document.createTextNode(faction.name));
+        document.getElementById('faction-title-content').appendChild(h1);
+
+        /*
+        for (ability of faction.abilities)
+        {
+            console.log("a:")
+            console.log(ability)
+            console.log(":a")
+
+            var div = document.createElement("div");
+            document.getElementById('faction-title-content').appendChild(div);
+
+            var h2 = document.createElement("h2");
+            h2.appendChild(document.createTextNode(ability.name));
+            div.appendChild(h2);
+
+            var p = document.createElement("p");
+            p.appendChild(document.createTextNode(ability.description));
+            div.appendChild(p);
+        }
+        */
+
+        document.getElementById('day-phase-content').innerHTML = phase.name;
+        document.getElementById('phase-step-content').innerHTML = step.name;
+    }
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="faction-title"> <div id="faction-title-content"> </div>
+
+<div id="day-phase"> <div id="day-phase-content"> </div>
+
+<div id="phase-step"> <div id="phase-step-content"> </div>
+
+<div id=navigation>
+
+<a href="#void" class="button3" onclick="set_state(global_step-1)" >Prev</a>
+<a href="#void" class="button3" onclick="set_state(global_step+1)" >Next</a>
+
+</div>
+
+</body>
+
+</html>

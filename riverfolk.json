@@ -1,0 +1,57 @@
+{
+        "name": "Riverfolk Company",
+        "abilities": [{
+                        "name": "Poor Manual Dexterity",
+                        "description": "The bots have no hand of cards. Bots cannot discard cards. If a human would take a card from a bot, that human draws a card instead. If a human would give a card to a bot, discard that card, and that bot scores one victory point."
+                },
+                {
+                        "name": "Hates Surprises",
+                        "description": "Ambush cards cannot be played against bots."
+                },
+                {
+                        "name": "Market",
+                        "description": "The Market is a row of five face-up cards. The order of its cards cannot be changed."
+                }
+        ],
+        "phases": [{
+                        "name": "Setup",
+                        "steps": [{
+                                        "name": "Gather Warriors",
+                                        "description": "Form a supply of 15 warriors."
+                                },
+                                {
+                                        "name": "Place Warriors",
+                                        "description": "Place 1 warrior in each clearing on the river."
+                                },
+                                {
+                                        "name": "Fill Trade Posts Tracks",
+                                        "description": "Place 9 trade posts on the matching spaces of your Trade Posts tracks."
+                                },
+                                {
+                                        "name": "Gain Starting Payment",
+                                        "description": "Place 1 warrior in your Payments box."
+                                },
+                                {
+                                        "name": "Stock Market",
+                                        "description": "Draw 5 cards and add them to your Market."
+                                }
+                        ]
+                }, {
+                        "name": "Birdsong",
+                        "steps": [{
+                                        "name": "Stock the Market",
+                                        "description": "Draw cards and add them face up to the Market’s right side until it has five cards."
+                                },
+                                {
+                                        "name": "Craft",
+                                        "description": "Craft the first card added to the Market this turn that shows an available item, scoring one victory point. (Discard it, leaving four cards.)"
+                                },
+                                {
+                                        "name": "Set Order",
+                                        "description": "The order is the rightmost Market card."
+                                }
+                        ]
+                }
+
+        ]
+}
