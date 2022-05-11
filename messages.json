@@ -64,11 +64,12 @@
     "daylight.recruit.bird.html": "Posicione um guerreiro em cada clareira de <b>rio</b>, começando pelas de maior prioridade.",
     "daylight.check-for-protectionism": "Protecionismo",
     "daylight.check-for-protectionism.html": [
-        "Verifique:<br>",
-        "<input type='checkbox' class='protectionism' id='shield'><label for='shield'>A caixa de Pagamentos está vazia?</label><label for='shield' class='protectionism-label'></label>",
+        "Verifique condições:<br>",
+        "<label class='switch'><input type='checkbox' id='shield'><span class='slider shield'></span></label>",
+        "<label for='shield'>A caixa de Pagamentos vazia?</label>",
         "<br>",
-        "<input type='checkbox' class='protectionism' id='sword'><label for='sword'>O suprimento de guerreiros está vazio?</label><label for='sword' class='protectionism-label'></label>",
-        ""],
+        "<label class='switch'><input type='checkbox' id='sword'><span class='slider sword'></span></label>",
+        "<label for='sword'>O suprimento de guerreiros vazio?</label>"],
     "daylight.organize": "Organizar",
     "daylight.organize.html": [
         "Marque um ponto de vitória e posicione dois guerreiros na clareira com mais peças inimigas que tenha peças dos Ribeirinhos."],
