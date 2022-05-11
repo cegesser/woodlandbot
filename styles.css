@@ -1,0 +1,195 @@
+html  {
+    background: rgb(248,226,178);
+    /*font-size: 200%;*/
+    font-size:5vw;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.no-margin {
+    margin: 0 5px;
+}
+
+body {
+    margin: 0;
+}
+
+#faction-title {
+    float: left;
+    width: 100%;
+    font-size:6vw;
+}
+
+#faction-abilities {
+    padding: 0 5px;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.day-phase {
+    float: left;
+    width: 100%;
+    font-size:6vw;
+}
+
+.setup {
+    color: white;
+    background: black;
+}
+
+.birdsong {
+    color: white;
+    background: rgb(249,158,65);
+}
+
+.daylight {
+    color: white;
+    background: rgb(106,178,226);
+}
+
+.evening {
+    color: white;
+    background: rgb(132,129,138);
+}
+
+.title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.step {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.content {
+    float: left;
+    margin: 0 5px;
+}
+
+.suit-selector {
+    float: left;
+    margin: 1em;
+}
+
+.suit-label {
+  float: none;
+  position: relative;
+  padding-left: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.suit-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+[type=radio] + img {
+    border: 0.25em solid transparent;
+    border-radius: 0.5em;
+    padding: 0.1em;
+}
+
+[type=radio]:checked + img {
+    border: 0.25em solid;
+    border-radius: 0.5em;
+    padding: 0.1em;
+}
+
+.suit-img {
+    width: 2em
+}
+
+
+input[class=protectionism]
+{
+    display: none;
+}
+
+label[class=protectionism-label] {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+label[class=protectionism-label]:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  border-radius: 15%;
+  border: 1px solid grey;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}
+
+:checked + label + label[class=protectionism-label]:before {
+  background-color: grey;
+}
+
+.inline-suit {
+    width: 1em
+}
+
+
+.navbar{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+    float: left;
+    display:inline-block;
+    padding:0.1em .5em;
+    margin:0 0.3em 0.3em 0;
+    border: 1px solid;
+    border-radius:0.25em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    background-color:rgb(243,209,171);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+#next-step-button {
+    float: right;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+@media all and (max-width:30em){
+    .navbar a {
+        display:block;
+        margin:0.2em auto;
+    }
+}

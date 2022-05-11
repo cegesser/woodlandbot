@@ -1,0 +1,93 @@
+{
+    "ability.poor-manual-dexterity": "Pouca Destreza Manual",
+    "ability.poor-manual-dexterity.html": [
+        "Os autômatos não possuem uma mão de cartas. Autômatos não podem descartar cartas. ",
+        "Se um humano for pegar uma carta de um autômato, este humano compra uma carta ao invés disso. ",
+        "Caso um humano for entregar uma carta para um autômato, descarte esta carta e o autômato recebe 1 PV."],
+    "ability.hates-surprises": "Odeia Surpresas",
+    "ability.hates-surprises.html": "Cartas de emboscada não podem ser jogadas contra os autômatos.",
+
+    "fox":   "<b>Rapoza</b>   <img class='inline-suit' src='./images/fox.png'>",
+    "mouse": "<b>Rato</b> <img class='inline-suit' src='./images/mouse.png'>",
+    "bunny": "<b>Coelho</b> <img class='inline-suit' src='./images/bunny.png'>",
+
+    "setup": "Preparação",
+    "birdsong": "Amanhecer",
+    "daylight": "Dia",
+    "evening": "Anoitecer",
+    "prev-step": "Anterior",
+    "start-playing": "Começar a jogar",
+    "next-turn": "Próximo turno",
+
+    "riverfolk": "Robôs Ribeirinhos",
+    "ability.market": "Mercado",
+    "ability.market.html": "O Mercado é uma fileira visível de cartas. A ordem das cartas não pode ser alterada.",
+
+    "ability.trade-posts": "Entrepostos Comerciais",
+    "ability.trade-posts.html": [ "Quando destruido, ele volta para o tabuleiro da facção ",
+        "e metade dos guerreiros do jogador que o removeu saem da caixa de Pagamentos."],
+
+
+    "setup.riverfolk": "",
+    "setup.riverfolk.html": ["<ol>",
+        "<li>Forme um suprimento com 15 guerreiros.</li>",
+        "<li>Posicione 1 guerreiro em cada clareira do rio.</li>",
+        "<li>Posicione os 9 entrepostos comercias nos espaços correspondentes do tabuleiro.</li>",
+        "<li>Posicione 1 guerreiro na caixa de Pagamentos.</li>",
+        "<li>Compre 5 cartas e as adicione ao Mercado.</li>",
+        "</ol>"],
+
+    "birdsong.stock-the-market": "Estocar o mercado",
+    "birdsong.stock-the-market.html": "Compre cartas e as adicione ao lado direito do Mercado até que ele tenha 5 cartas",
+    "birdsong.craft": "Criar",
+    "birdsong.craft.html": [
+        "Tente criar a primeira carta adicionada ao Mercado neste turno que apresente um item disponível.<br>",
+        "Se conseguir, marque 1 ponto de vitória e descarte a carta <i>(deixando quatro no Mercado).</i>"],
+    "birdsong.set-order": "Definir Ordens",
+    "birdsong.set-order.html": [
+        "Qual o naipe da carta mais à direita do Mercado?",
+        "<div class='suit-selector'>",
+        "<label class='suit-label'><input type='radio' id='fox'><img class='suit-img' src='./images/fox.png'></label>",
+        "<label class='suit-label'><input type='radio' id='mouse'><img class='suit-img' src='./images/mouse.png'></label>",
+        "<label class='suit-label'><input type='radio' id='bunny'><img class='suit-img' src='./images/bunny.png'></label>",
+        "<label class='suit-label'><input type='radio' id='bird'><img class='suit-img' src='./images/bird.png'></label>",
+        "</div>"],
+    "daylight.build-and-garrison": "Construir e Guarnecer",
+    "daylight.build-and-garrison.html": [
+        "Posicione um entreposto comercial e um guerreiro em uma clareira de ${order} que ainda não tenha um entreposto comerecial.<br>",
+        "Preferencialmente, uma clareira com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos."],
+    "daylight.build-and-garrison.bird.html": [
+        "Posicione um entreposto comercial e um guerreiro em uma clareira que ainda não tenha um entreposto comerecial.<br>",
+        "Preferencialmente, uma clareira com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos."],
+    "daylight.recruit": "Recrutar",
+    "daylight.recruit.html": "Posicione um guerreiro em cada clareira de ${order}, começando pelas de maior prioridade.",
+    "daylight.recruit.bird.html": "Posicione um guerreiro em cada clareira de <b>rio</b>, começando pelas de maior prioridade.",
+    "daylight.check-for-protectionism": "Protecionismo",
+    "daylight.check-for-protectionism.html": [
+        "Verifique:<br>",
+        "<input type='checkbox' class='protectionism' id='shield'><label for='shield'>A caixa de Pagamentos está vazia?</label><label for='shield' class='protectionism-label'></label>",
+        "<br>",
+        "<input type='checkbox' class='protectionism' id='sword'><label for='sword'>O suprimento de guerreiros está vazio?</label><label for='sword' class='protectionism-label'></label>",
+        ""],
+    "daylight.organize": "Organizar",
+    "daylight.organize.html": [
+        "Marque um ponto de vitória e posicione dois guerreiros na clareira com mais peças inimigas que tenha peças dos Ribeirinhos."],
+    "daylight.organize.empty.html": "Sem ação.",
+    "daylight.battle": "Batalhar",
+    "daylight.battle.html": "Sem ação.",
+    "daylight.battle.shield.html": "Batalhe em cada clareira, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos.",
+    "daylight.battle.sword.html": "Batalle em cada clareira de ${order}, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos",
+    "evening.score": "Pontuar",
+    "evening.score.html": [
+        "Identifique o jogador com mais guerreiros na caixa de Pagamentos.<br>",
+        "Para cada guerreiro dele, marque um ponto de vitória.<br>",
+        "Retorne todos estes guerreiros para o suprimento de seu jogador." ],
+    "evening.racketeering": "Extorquir",
+    "evening.racketeering.html": ["Em cada clareira, deixe no máximo dois guerreiros dos Ribeirinhos. Coloque os guerreiros removidos na caixa de Pagamentos."],
+    "evening.racketeering.empty.html": "Sem ação.",
+    "evening.discard": "Descartar",
+    "evening.discard.html": "Descarte a carta mais à esquerda do Mercado.",
+    "evening.discard.shield.html": "Descarte as duas cartas mais à esquerda do Mercado.",
+
+    "end": "end"
+}
