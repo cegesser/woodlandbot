@@ -1,7 +1,16 @@
-html  {
-    background: rgb(248,226,178);
-    /*font-size: 200%;*/
+@font-face { font-family: Baskerville; src: url('./font/Baskerville.ttf') format('truetype'); }
+@font-face { font-family: Luminari; src: url('./font/Luminari-Regular.ttf') format('truetype'); }
+
+html, body {
+    background: rgb(248,226,178);    
     font-size:5vw;
+    height: 100%;
+    margin: 0;
+    font-family: Baskerville;
+}
+
+.base {
+    height: 100%;
 }
 
 #main {
@@ -21,7 +30,13 @@ body {
 #faction-title {
     float: left;
     width: 100%;
-    font-size:6vw;
+    font-size:8vw;
+    font-family: Luminari
+}
+
+.faction-icon {
+    float: right;
+    height: 1.25em;
 }
 
 #faction-abilities {
@@ -35,7 +50,8 @@ body {
 .day-phase {
     float: left;
     width: 100%;
-    font-size:6vw;
+    font-size:7vw;
+    font-family: Luminari
 }
 
 .setup {
@@ -60,27 +76,35 @@ body {
 
 .title {
     font-weight: bold;
+    font-size:6vw;
     margin: 0;
 }
 
 .step {
     float: left;
-    width: 100%;
     margin: 0;
+    width: 95%;
+    padding-left: 5px;
 }
 
 .content {
     float: left;
+    width: 95%;
     margin: 0 5px;
 }
 
+.intext {
+    height: 0.9em;
+}
+
 .suit-selector {
-    float: left;
+    /*float: left;*/
     margin: 1em;
 }
 
 .suit-label {
   float: none;
+  display: contents;
   position: relative;
   padding-left: 1em;
   cursor: pointer;
@@ -98,29 +122,30 @@ body {
   width: 0;
 }
 
-[type=radio] + img {
+[type=radio] + img, [type=checkbox] + img {
     border: 0.25em solid transparent;
     border-radius: 0.5em;
     padding: 0.1em;
 }
 
-[type=radio]:checked + img {
+[type=radio]:checked + img, [type=checkbox]:checked + img {
     border: 0.25em solid;
     border-radius: 0.5em;
     padding: 0.1em;
 }
 
 .suit-img {
-    width: 2em
+    width: 2.4em
 }
 
 /* The switch - the box around the slider */
 .switch {
   position: relative;
+  vertical-align: middle;
   display: inline-block;
-  width: 2.45em;
-  height: 1.45em;
-  margin: 0.5em;
+  width: 3.45em;
+  height: 1.95em;
+  margin: 0.15em;
 }
 
 /* Hide default HTML checkbox */
@@ -146,8 +171,8 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 1em;
-  width: 1em;
+  height: 1.5em;
+  width: 1.5em;
   left: 0.1em;
   bottom: 0.1em;
   transition: .4s;
@@ -163,6 +188,11 @@ body {
     background-image: url("./images/riverfolk-sword.png");
 }
 
+
+.crown:before {
+    background-image: url("./images/crown.png");
+}
+
 input:checked + .slider {
   border-color: rgb(102, 198, 194);
 }
@@ -172,42 +202,54 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(1em);
+  transform: translateX(1.5em);
   filter: opacity(100%);
 }
 
-.inline-suit {
-    width: 1em
-}
-
-
 .navbar{
     overflow: hidden;
+
+    width: 100%;
+}
+
+.bottom{
     position: fixed;
     bottom: 0;
-    width: 100%;
+}
+
+#final-space {
+    float: left;
+    min-height: 4em;
+    color: transparent;
 }
 
 /* Style the links inside the navigation bar */
 .navbar a {
     float: left;
-    display:inline-block;
-    padding:0.1em .5em;
-    margin:0 0.3em 0.3em 0;
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    margin: 0 0.3em 0.3em 0em;
     border: 1px solid;
-    border-radius:0.25em;
+    border-radius: 0.25em;
     box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:300;
-    color:#000000;
-    background-color:rgb(243,209,171);
-    text-align:center;
-    transition: all 0.2s;
+    text-decoration: none;
+    font-size: 6vw;
+    color: #000000;
+    background-color: rgb(243,209,171);
+    text-align: center;
+    transition: all 0.2s
+    max-width: 50%;
 }
 
 #next-step-button {
     float: right;
+    margin-right: 0.3em
+}
+
+#prev-step-button {
+    position: fixed;
+    bottom: 0;
+    margin-left: 0.3em
 }
 
 /* Change the color of links on hover */
@@ -227,4 +269,63 @@ input:checked + .slider:before {
         display:block;
         margin:0.2em auto;
     }
+}
+
+.navbar .lizard-conspiracy-name {
+    font-size: 0.4em;
+    min-height: 7em;
+    padding-top: 3em;
+}
+
+.navbar .lizard-current-conspiracy-name {
+    font-size: 0.75em;
+    min-height: 3.75em;
+    padding-top: 1.25em;
+    font-weight: bold;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  transition: all 0.2s
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-button {
+  color: #aaa;
+  font-size: 2em;
+  margin:0 0.3em 0.3em 1em;
+  padding:0.1em 0.2em;
+  border: 1px solid;
+  border-radius:0.25em;
+  box-sizing: border-box;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+td {
+    text-align: center
 }

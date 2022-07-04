@@ -5,47 +5,71 @@
 
 <title>Woodland Bots</title>
 
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width" />
 
 <link rel="stylesheet" href="./styles.css">
-<link rel="icon" href="./images/icon-72x72.png">
+<link rel="icon" href="./images/icon-150x150.png">
 <link rel="manifest" href="./manifest.json">
 
-<!--<script>
+<script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('./sw.js', { scope: '/' })
       .then(function () {
-        console.log('service worker registered');
-      })
-      .catch(function () {
-        console.warn('service worker failed');
-      });
+          console.log('Service worker registered successfully');
+        }).catch(function (e) {
+          console.error('Error during service worker registration:', e);
+        });
   }
-</script>-->
+</script>
 
 </head>
 
-<body>
+<body id="body">
 
-<div id="main">
+    <div id="base">
 
-<div id="faction-title">  </div>
+        <div id="main">
 
-<div id="faction-abilities">  </div>
+            <div id="faction-title">  </div>
+            <div id="faction-abilities">  </div>
+            <div id="day-phase"> </div>
+            <div id="phase-step"> </div>
 
-<div id="day-phase"> </div>
+            <span id="final-space"> A </span>
 
-<div id="phase-step"> </div>
+            <div class="navbar bottom" >
+                <a href="#" id="prev-step-button" >&vltri;</a>
+                <a href="#" id="next-step-button" >&vrtri;</a>
+            </div>
+        </div>
 
-<div class="navbar" >
+    </div>
 
-    <a href="#void" class="button3" id="prev-step-button" ></a>
-    <a href="#void" class="button3" id="next-step-button" ></a>
+    <div id="faction-modal-box" class="modal">
+        <div class="modal-content">
+            <p id="select-faction-message">Some text in the Modal..</p>
 
-</div>
+            <div class='suit-selector'>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Cats'      ><img class='suit-img' src='./images/cats.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Eyrie'     ><img class='suit-img' src='./images/eyrie.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Alliance'  ><img class='suit-img' src='./images/alliance.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Vagabot'   ><img class='suit-img' src='./images/vagabot.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Lizards'   ><img class='suit-img' src='./images/lizards.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Riverfolk' ><img class='suit-img' src='./images/riverfolk.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Duchy'     ><img class='suit-img' src='./images/duchy.png'></label>
+                <label class='suit-label'><input class='faction-selector' type='checkbox' id='Conspiracy'><img class='suit-img' src='./images/conspiracy.png'></label>
+            </div>
+            <span class="modal-button" id="game-start"></span>
+        </div>
+    </div>
 
-</div>
-
+    <div id="modal-box" class="modal">
+        <div class="modal-content">
+            <p id="modal-message">Some text in the Modal..</p>
+            <span class="modal-button" id="modal-confirm"></span>
+            <span class="modal-button" id="modal-close"></span>
+        </div>
+    </div>
 </body>
 
 <script type="module" src="main.js"></script>

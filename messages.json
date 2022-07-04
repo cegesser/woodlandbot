@@ -3,21 +3,335 @@
     "ability.poor-manual-dexterity.html": [
         "Os autômatos não possuem uma mão de cartas. Autômatos não podem descartar cartas. ",
         "Se um humano for pegar uma carta de um autômato, este humano compra uma carta ao invés disso. ",
-        "Caso um humano for entregar uma carta para um autômato, descarte esta carta e o autômato recebe 1 PV."],
+        "Caso um humano for entregar uma carta para um autômato, descarte esta carta e o autômato recebe <img src='./images/vp.png' class='intext'>."],
     "ability.hates-surprises": "Odeia Surpresas",
     "ability.hates-surprises.html": "Cartas de emboscada não podem ser jogadas contra os autômatos.",
 
-    "fox":   "<b>Rapoza</b>   <img class='inline-suit' src='./images/fox.png'>",
-    "mouse": "<b>Rato</b> <img class='inline-suit' src='./images/mouse.png'>",
-    "bunny": "<b>Coelho</b> <img class='inline-suit' src='./images/bunny.png'>",
+    "birdsong.default.set-order": "Definir Ordens",
+    "birdsong.default.set-order.html": [
+        "Compre e revele uma carta. Esta é a <i>carta de ordens</i>.<br>Indique o naipe dela:${suit-selector}"],
+    "birdsong.default.caft": "Criar",
+    "birdsong.default.caft.html": "Se a <i>carta de ordens</i> contiver um item, crie-o e marque <img src='./images/vp.png' class='intext'>.",
+    "evening.default.discard": "Descartar ordens.",
+    "evening.default.discard.html": "Descarte a <i>carta de ordens</i>.",
+
+    "fox":   "<b>Raposa</b> <img class='intext' src='./images/fox.png'>",
+    "mouse": "<b>Rato</b>   <img class='intext' src='./images/mouse.png'>",
+    "bunny": "<b>Coelho</b> <img class='intext' src='./images/bunny.png'>",
+    "bird": "<b>Pássaro</b> <img class='intext' src='./images/bird.png'>",
+
+    "select-faction-message": "Escolha as facções:",
+    "game-start": "Iniciar!",
 
     "setup": "Preparação",
     "birdsong": "Amanhecer",
     "daylight": "Dia",
     "evening": "Anoitecer",
-    "prev-step": "Anterior",
     "start-playing": "Começar a jogar",
     "next-turn": "Próximo turno",
+    "restart": "Reiniciar partida",
+    "restart-question": "Tem certeza?",
+    "yes": "Sim",
+    "no": "Não",
+
+    "cats": "Marquês Mecânico 2.0",
+    "ability.the-keep": "A Torre da Guarda",
+    "ability.the-keep.html": ["Apenas os Marqueses podem posicionar peças na clareira que possui a Torre da Guarda.",
+        "Se ela for removida, deve ser retornada para a caixa do jogo."],
+    "cats.sawmill": "Serraria",
+    "cats.workshop": "Oficina",
+    "cats.recruiter": "Recrutador",
+    "setup.cats": " ",
+    "setup.cats.html": ["<ol>",
+        "<li>Forme um suprimento com 25 guerreiros.</li>",
+        "<li>Escolha uma clareira de canto aleatória. Posicione nela 2 guerreiros e a Torre de Guarda.</li>",
+        "<li>Posicione um guerreiro em cada outra clareira, exceto na diagonalmente oposta à da Torre de Guarda</li>",
+        "<li>Posicione aleatóriamente uma Serraria, uma Oficia e um Recrutador na clareira da Torre de Guarda e adjacentes. Uma construção por clareira.</li>",
+        "<li>Preencha as trilhas de construção do tabuleiro de facção com as contruções remanescentes, deixando os espaços mais à esquerda livres.</li>",
+        "</ol>"],
+    "daylight.cats.batle": "Batalhar",
+    "daylight.cats.batle.html": [
+        "Em cada clareira de ${order}, batalhe contra o jogador com mais peças na clareira, ou mais pontos de vitória, em caso de empate."
+    ],
+    "daylight.cats.batle.bird.html": [
+        "Em cada clareira, batalhe contra o jogador com mais peças na clareira, ou mais pontos de vitória, em caso de empate."
+    ],
+    "daylight.cats.recruit": "Recrutar",
+    "daylight.cats.recruit.html": [
+        "Identifique as clareiras de ${order} governadas pelos Marqueses.",
+        "<br>Posicione 4 guerreiros nelas, distribuidos equilibradamente.",
+        "<br>Caso governem três, a de maior prioridade recebe o quarto guerreiro.",
+        "<br><br>Para cada 2 guerreiros que não puderem ser recrutados, por falta de suprimento ou por não haver clareiras elegíveis, marque <img src='./images/vp.png' class='intext'>."
+    ],
+    "daylight.cats.recruit.bird.html": [
+        "Identifique as 2 clareiras de <i>menor</i> prioridade governadas pelos Marqueses.",
+        "<br>Posicione 2 guerreiros em cada uma delas. ",
+        "<br>Caso governem apenas 1, posicione 4 guerreiros nela. ",
+        "<br><br>Para cada 2 guerreiros que não puderem ser recrutados, por falta de suprimento ou por não haver clareiras elegíveis, marque <img src='./images/vp.png' class='intext'>."
+    ],
+    "daylight.cats.build": "Erguer",
+    "daylight.cats.build.html": [
+        "Identifique a clareira governada pelos Marqueses com mais guerreiros deles. ",
+        "<br>Posicione nela uma construção de: ${ordered-building}"
+    ],
+    "daylight.cats.build.bird.html": [
+        "Identifique a clareira governada pelos Marqueses com mais guerreiros deles. ",
+        "<br>Posicione nela uma construção do tipo que mais dê pontos. ",
+        "Em caso de empate, prefira primeiro Serraria, depois Oficina. "
+    ],
+    "daylight.cats.move": "Mover",
+    "daylight.cats.move.html": [
+        "A partir de cada clareira de ${order}, mova todos menos 3 guerreiros para a clareira adjacente com mais peças inimigas."
+    ],
+    "daylight.cats.move.bird.html": [
+        "A partir de cada clareira, mova todos menos 3 guerreiros para a clareira adjacente com mais peças inimigas.",
+        "<br>Depois, batalhe em cada clareira que recebeu movimento."
+    ],
+    "daylight.cats.expand": "Expandir",
+    "daylight.cats.expand.html": [
+        "Se não foi feita construção neste turno e houver 5 ou menos construções no mapa: ",
+        "<br>Compre uma nova <i>carta de ordens</i> e recomece o Dia. (Não crie o item - Apenas 1x por turno)"
+    ],
+    "evening.cats.score": "Pontuar",
+    "evening.cats.score.html": "Marque os pontos de vitória listados no espaço mais à direita na trilha de Construções de ${ordered-building}",
+    "evening.cats.score.bird.html": "Marque os pontos de vitória indicados no espaço livre mais à direita da trilha de Construções que dê mais pontos.",
+
+    "eyrie": "Rapinas Elétricas",
+    "ability.lords-of-the-forest": "Lordes da Floresta",
+    "ability.lords-of-the-forest.html": ["As Rapinas governam uma clareira em que estejam empatadas pela maior quantidade combinada ",
+        "de guerreiros e construções nela. Elas não governam clareiras vazias."],
+    "ability.the-decree": "O Decreto",
+    "ability.the-decree.html": [
+        "<table>",
+        "<tr><td>#{fox}</td><td>#{mouse}</td><td>#{bunny}</td><td>#{bird}</td></tr>",
+        "<tr><td><img src='./images/fox.png' class='intext'></td><td><img src='./images/mouse.png' class='intext'></td><td><img src='./images/bunny.png' class='intext'></td><td><img src='./images/bird.png' class='intext'></td></tr>",
+        "</table>"
+    ],
+    "setup.eyrie": " ",
+    "setup.eyrie.html": ["<ol>",
+        "<li>Forme um suprimento com 20 guerreiros.</li>",
+        "<li>Escolha uma clareira de canto aleatória, que não seja a clareira inicial de outro Bot e, se possível, diagonalmente oposta. Posicione nela 6 guerreiros e um Ninho.</li>",
+        "<li>Posicione as duas cartas de Vizires Leais na coluna mais à direita do decreto</li>",
+        "<li>Posicione aleatóriamente uma Serraria, uma Oficia e um Recrutador na clareira da Torre de Guarda e adjacentes. Uma construção por clareira.</li>",
+        "<li>Preencha a trilhas de Ninhos do tabuleiro de facção, deixando o espaços mais à esquerda livre.</li>",
+        "</ol>"],
+    "birdsong.eyrie.add-to-decree": "Adicione ao Decreto",
+    "birdsong.eyrie.add-to-decree.html": "Adicione a carta de ordens ao decreto, na coluna de ${order}.",
+    "birdsong.eyrie.a-new-roost": "Um Novo Ninho",
+    "birdsong.eyrie.a-new-roost.html": [
+        "Se você não houver nenhum Ninho no mapa, posicione um e 4 guerreiros na clareira de ${order} com a maior prioridade ",
+        "e onde todas estas peças possam ser posicionadas."
+    ],
+    "daylight.eyrie.recruit": "Recrutar",
+    "daylight.eyrie.recruit.html": [
+        "Identifique a clareira de #{suit} com Ninho que tenha mais peças inimigas, menos guerreiros das Rapinas e menor prioridade. ",
+        "Posicione #{n} guerreiros lá."
+    ],
+    "daylight.eyrie.move": "Mover",
+    "daylight.eyrie.move.html": [
+        "Identifique a clareira de #{suit} governada pelas Rapinas com mais guerreiros das Rapinas e menos peças inimigas. ",
+        "Mova para a clareira adjacente, preferencialmente sem Ninho, de menor prioridade. ",
+        "Deixe #{n} na origem, mais o necessário para continuar governando."
+    ],
+    "daylight.eyrie.battle": "Batalhar",
+    "daylight.eyrie.battle.html": [
+        "Identifique a clareira de #{suit}, preferencialmente sem Ninhos, com mais construções indefesas e menor prioridade. ",
+        "Batalhe nela contra o jogador com mais construções lá, ou mais peças lá, ou mais pontos. "
+    ],
+    "daylight.eyrie.battle.extra.html": "Cause <b>1</b> dano adicional.",
+    "daylight.eyrie.build": "Construir",
+    "daylight.eyrie.build.html": [
+        "Identifique a clareira governanda pelas Rapidas, sem Ninhos, de maior prioridade.<br>",
+        "Posicione um Ninho nela.<br>",
+        "<br>Caso não consiga posicionar um Ninho, por qualquer motivo, entre em Tumulto:",
+        "<ol><li><b>Perca</b> #{n} pontos de vitória.</li>",
+        "<li>Descarte todas as cartas do decreto, exceto os vizires leais.</li>",
+        "<li>Clique aqui:</li>",
+        "</ol>",
+        "<div class='navbar' id='turmoil'><a>Tumulto</a></div>"
+    ],
+    "evening.eyrie.score": "Pontuar",
+    "evening.eyrie.score.html": "Marque os pontos de vitória indicados no espaço livre mais à direita da trilha de Ninhos.",
+
+
+    "alliance": "Aliança Automatizada",
+    "ability.automated-ambush": "Emboscada Automatizada",
+    "ability.automated-ambush.html": "Realize um dano adicional em batalhas com pelo menos um guerreiro da Aliança.",
+    "ability.automated-outrage": "Ultraje Automatizado",
+    "ability.automated-outrage.html": [
+        "Sempre que um humano remover um marcador de simpatia ou mover guerreiros para uma clareira simpática, ",
+        "ele deve descartar uma carta de sua mão do naipe correspondente à clareira afetada. ",
+        "Caso ele não possua cartas correspondentes, a Aliança marca <img src='./images/vp.png' class='intext'>."
+    ],
+    "ability.crackdown": "Repressão",
+    "ability.crackdown.html": [ "Sempre que uma base da Aliança for removida, ",
+        "remova também todos os marcadores de simpatia de clareiras correspondentes ao naipe da base removida."],
+    "setup.alliance": " ",
+    "setup.alliance.html": ["<ol>",
+        "<li>Forme um suprimento de 10 guerreiros.</li>",
+        "<li>Posicione as 3 bases nos locais correspondentes do tabuleiro de facções.</li>",
+        "<li>Posicione os 10 marcadores de simpatia na trilha correspondente do tabuleiro de facção.</li>",
+        "</ol>"],
+    "birdsong.alliance.revolt": "Revolta",
+    "birdsong.alliance.revolt.html": [
+        "Se a base de ${order} estiver disponível no tabuleiro da facção, ",
+        "identifique a clareira simpática deste naipe com a maior quantidade de peças inimigas.<br>",
+        "Remova todas as peças inimigas e posicione a base correspondente lá."],
+    "birdsong.alliance.revolt.bird.html": "Sem ação.",    
+    "daylight.alliance.spread-sympathy": "Distribuir Simpatia",
+    "daylight.alliance.spread-sympathy.html": [
+        "Identifique a clareira, preferencialmente de ${order}, que não tenha simpatia, seja adjacente a uma com simpatia e que tenha a menor quantidade de guerreiros inimigos.",
+        "<br>Posicione uma simpatia lá.",
+        "<br>Receba os pontos mostrados no espaço revelado do tabuleiro de facção.",
+        "<br>Caso não possa posicionar um marcador de simpatia, receba <b>5</b> <img src='./images/vp.png' class='intext'>."
+    ],
+    "daylight.alliance.spread-sympathy.bird.html": [
+        "Identifique a clareira que não tenha simpatia, seja adjacente a uma com simpatia e que tenha a menor quantidade de guerreiros inimigos.",
+        "<br>Posicione uma simpatia lá.",
+        "<br>Receba os pontos mostrados no espaço revelado do tabuleiro de facção.",
+        "<br>Caso não possa posicionar um marcador de simpatia, receba <b>5</b> <img src='./images/vp.png' class='intext'>."
+    ],
+    "daylight.alliance.surprise-revolt": "Revolta Surpresa",
+    "daylight.alliance.surprise-revolt.html": "Sem ação.",
+    "daylight.alliance.surprise-revolt.bird.html": [
+        "Se houver bases disponíveis no tabuleiro de facção, ",
+        "identifique a clareira simpática, correspondente a uma delas que tenha a maior quantidade de peças inimigas.<br>",
+        "Remova todas as peças inimigas e posicione a base correspondente lá."
+    ],
+    "daylight.alliance.public-pity": "Pena Pública",
+    "daylight.alliance.public-pity.html": [
+        "Se não tiver ocorrido Revolta neste turno, distribua simpatia. ",
+        "Se, depois disso, houver 5 ou menos simpatias no mapa, distribua novamente."
+    ],
+    "evening.alliance.organize": "Organizar",
+    "evening.alliance.organize.html": [
+        "Em cada clareira com uma base e 3 ou mais guerreiros da Aliança, ",
+        "remova todos os guerreiros da Aliança e distribua simpatia."
+    ],
+    "evening.alliance.recruit": "Recrutar",
+    "evening.alliance.recruit.html": "Posicione um guerreiro em cada clareira com uma base.",
+
+
+    "vagabot": "Automalandro",
+    "ability.nimble": "Ágil",
+    "ability.nimble.html": "Pode mover-se independente de quem governe a clareira inicial e a clareira final.",
+    "ability.lone-wanderer": "Andarilho Solitário",
+    "ability.lone-wanderer.html": ["O peão do Automalandro não é um guerreiro, logo ele não pode governar uma clareira ou impedir que outro jogador governe. ",
+        "O peão do Automalandro não pode ser removido do mapa.<br>",
+        "Sempre que um efeito dizer para remover todas as peças de uma clareira que tenha o Automalandro, danifique 3 itens."],
+    "setup.vagabot": " ",
+    "setup.vagabot.html": ["<ol>",
+        "<li>Escolha uma carta de personagem e coloque-a no espaço apropriado.</li>",
+        "<li>Posicione o peão do Automalandro na floresta que possua mais clareiras adjacentes. Em caso de empate, decida aleatoriamente entre elas.</li>",
+        "<li>Embaralhe e compre 1 Tarefa. Deixe-a próxima do tabuleiro de facção, com a frente para cima. Esta tarefa só pode ser completada pelo Automalandro.</li>",
+        "<li>Posicione um item marcado com “R” abaixo de cada ruína no mapa.</li>",
+        "<li>Posicione na mochila quaisquer 4 itens marcados com “S”.</li>",
+        "</ol>"],
+    "birdsong.vagabot.slip": "Deslizar",
+    "birdsong.vagabot.slip.html": [
+        "Se possuir apenas 2 ou menos itens não-danificados, deslize para uma floresta adjacente aleatória e passe para o Anoitecer.",
+        "<br><br><div class='navbar' id='slip-to-evening'><a>Anoitecer</a></div>"],
+
+    "daylight.vagabot.explore": "Explorar",
+    "daylight.vagabot.explore.html": [
+        "Identifique a clareira mais próxima que tenha uma ruina. ",
+        "Desloque-se para ela, o mais diretamente possível, exaurindo 1 item por movimento.<br>",
+        "Exaura 1 item para pegar um item aleatório da ruína e posicioná-lo na mochila. ",
+        "Caso seja o último item da ruína, remova-a. <i>(Não receba PVs por explorar.)</i>"
+    ],
+    "daylight.vagabot.quest": "Tarefa",
+    "daylight.vagabot.quest.html": [
+        "Identifique a clareira mais próxima que corresponda à tarefa atual. ",
+        "Desloque-se para ela, o mais diretamente possível, exaurindo 1 item por movimento.<br>",
+        "Exaura 2 itens para completar a tarefa.<br>",
+        "Marque <img src='./images/vp.png' class='intext'><img src='./images/vp.png' class='intext'> e compre uma nova tarefa."
+    ],
+    "daylight.vagabot.aid": "Ajudar",
+    "daylight.vagabot.aid.html": [
+        "Identifique a clareira mais próxima que tenha peças de um jogador com itens ",
+        "em sua seção de itens artesanais. ",
+        "Desloque-se para ela, o mais diretamente possível, exaurindo 1 item por movimento.<br>",
+        "Identifique o jogador com menos pontos nesta clareira.<br>",
+        "Exaura 1 item para receber um item aleatório deste jogador e marcar <img src='./images/vp.png' class='intext'>. ",
+        "O jogador compra 1 carta."
+    ],
+    "daylight.vagabot.battle": "Batalhar",
+    "daylight.vagabot.battle.html": [
+        "Identifique a clareira mais próxima que tenha peças do jogador com mais pontos. ",
+        "Desloque-se para ela, o mais diretamente possível, exaurindo 1 item por movimento.<br>",
+        "Exaura 1 item para batalhar contra este jogador. Enquanto for possível, exaura mais 2 itens para batalhar novamente.<br>",
+        "Marque um <img src='./images/vp.png' class='intext'> por guerreiro removido."
+    ],
+    "daylight.vagabot.special": "Habilidade",
+    "daylight.vagabot.special.html": [
+        "Exaura 1 item para realizar a ação listada na carta de personagem. ",
+        "Caso a ação listada lá não tenha efeito algum ou seja impossível, pule esta ação.",
+        "<br><b>Ladrão:</b> Pegue uma carta aleatória do inimigo em sua clareira com mais pontos ou, em caso de empate, com mais peças lá.",
+        "<br><b>Funileiro:</b> Procure na pilha de descarte pela carta mais recente com um item disponível e o crie (marque apenas <img src='./images/vp.png' class='intext'>).",
+        "<br><b>Andarilho:</b> Se possuir 3 ou mais itens danificados, deslize para uma floresta adjacente aleatória."
+    ],
+    "evening.vagabot.refresh": "Reanimar",
+    "evening.vagabot.refresh.html":
+        "Reanime até 4 itens não-danificados.<br>Se não houver itens danificados, reanime mais 2 itens.",
+    "evening.vagabot.repair": "Reparar",
+    "evening.vagabot.repair.html": [
+        "Repare 1 item. De preferência, não-exaurido.<br>",
+        "Se estiver em uma floresta, repare todos."
+    ],
+
+    "lizards": "Lagartos Lógicos",
+    "ability.pilgrims": "Peregrinos",
+    "ability.pilgrims.html": "Os autômatos covernam clareiras com Jardins.",
+    "ability.robot-revenge": "Vingança Robótica",
+    "ability.robot-revenge.html": "Sempre que qualquer número de querreiros Lagartos forem removidos, posicione <b>um</b> deles no espaço de Acólitos.",
+    "ability.gardens": "Medo da Máquina",
+    "ability.gardens.html": "Sempre que um jardim for removido, descarte a primeira carta das Almas Perdidas",
+    "ability.lost-souls": "Almas Perdidas",
+    "ability.lost-souls.html": "Sempre que uma carta fosse para a pilha de descarte, coloque-a virada para cima na pilha de Almas Perdidas.",
+    "setup.lizards": " ",
+    "setup.lizards.html": ["<ol>",
+        "<li>Forme um suprimento com 25 guerreiros.</li>",
+        "<li>Escolha uma clareira de canto aleatória, que não seja a clareira inicial de outro Bot e, se possível, diagonalmente oposta. Posicione nela 4 guerreiros em um jardim correspondente. Então posicione 1 guerreiro em cada clareira adjacente.</li>",
+        "<li>Posicione o marcador de Pária na posição <i>Santificar</i> da trilha de Constipações.*</li>",
+        "<li>Posicione os 14 jardins remanescente nas trilhas do tabuleiro, da direita para a esquerda.</li>",
+        "<li>Compre 3 cartas e coloque cada uma delas, virada para cima, na pilha de Almas Perdidas.</li>",
+        "</ol>"],
+    "birdsong.lizards.set-order": "Definir Ordens",
+    "birdsong.lizards.set-order.html": [
+        "Qual o naipe com mais cartas nas Almas Perdidas?<br>Em caso de empare, escolha <img class='intext' src='./images/bird.png'>.${suit-selector}"],
+    "birdsong.lizards.perform-conspiracies": "Realizar Conspirações",
+    "birdsong.lizards.perform-conspiracies.html": ["Repita enquanto houver Acólitos:<br>",
+        "Avance o marcador e tente realizar a conspiração, removendo um Acólito se conseguir."
+    ],
+    "lizards.conspiracies.convert": "Conversão",
+    "lizards.conspiracies.convert.html": "Identifique o jogador com mais pontos. Na clareira de ${order} onde ele tenha mais construções, substitua um guerreiro dele por um Lagarto.",
+    "lizards.conspiracies.convert.bird.html": "Identifique o jogador com mais pontos. Na clareira onde ele tenha mais construções, substitua um guerreiro dele por um Lagarto.",
+    "lizards.conspiracies.crusade": "Cruzada",
+    "lizards.conspiracies.crusade.html": "Em cada clareira de ${order} com 2 ou mais guerreiros Lagartos, batalhe contra o jogador com mais pontos.",
+    "lizards.conspiracies.crusade.bird.html": "Em cada clareira com 2 ou mais guerreiros Lagartos, batalhe contra o jogador com mais pontos.",
+    "lizards.conspiracies.sanctify": "Santificar",
+    "lizards.conspiracies.sanctify.html": "Identifique o jogador com mais pontos. Na clareira de ${order} com construções dele, que ele tenha menos guerreiros, substitua uma construção aleatória por um jardim correspondente.",
+    "lizards.conspiracies.sanctify.bird.html": "Identifique o jogador com mais pontos. Na clareira com construções dele, que ele tenha menos guerreiros, substitua uma construção aleatória por um jardim correspondente.",
+    "daylight.lizards.rituals": "Rituais",
+    "daylight.lizards.rituals.html": [
+        "Separe as 4 primeiras cartas das Almas Perdidas. Para cada uma delas, realize o ritual de acordo com seu naipe:${suit-selector}"
+    ],
+    "daylight.lizards.rituals.recruit.html": [
+        "Identifique a clareira de ${ritual-suit}, de preferência com algum espaço de construção livre, que tenha mais constuções inimigas. ",
+        "<br>Posicione um guerreiro nela. Depois, se a estiver governando, posicione um jardim nela."
+    ],
+    "daylight.lizards.rituals.sacrifice.html": [
+        "Na clareira com mais guerreiros Lagartos, mova um deles para o espaço de Acólitos. Descarte esta carta."
+    ],
+    "evening.lizards.score": "Pontuar",
+    "evening.lizards.score.html": "Marque os pontos de vitória indicados no espaço livre mais à direita da trilha de Jardins de ${order}.",
+    "evening.lizards.score.bird.html": "Marque os pontos de vitória indicados no espaço livre mais à direita da trilha de Jardins que dê mais pontos.",
+    "evening.lizards.discard-lost-souls": "Descartar almas",
+    "evening.lizards.discard-lost-souls.html": "Descarte todas as cartas das Almas Perdidas.",
+    "evening.lizards.return-revealed-cards": "Retornar cartas",
+    "evening.lizards.return-revealed-cards.html": "Retorne para as Almas Perdidas as cartas que foram separadas para realizar Rituais, mantendo sua ordem original.",
+    "evening.lizards.craft": "Criar",
+    "evening.lizards.craft.html": "Compre uma carta. Revele-a e a adicione às Almas Perdidas. Se ela contiver um item, crie-o e marque <img src='./images/vp.png' class='intext'>.",
 
     "riverfolk": "Robôs Ribeirinhos",
     "ability.market": "Mercado",
@@ -27,8 +341,7 @@
     "ability.trade-posts.html": [ "Quando destruido, ele volta para o tabuleiro da facção ",
         "e metade dos guerreiros do jogador que o removeu saem da caixa de Pagamentos."],
 
-
-    "setup.riverfolk": "",
+    "setup.riverfolk": " ",
     "setup.riverfolk.html": ["<ol>",
         "<li>Forme um suprimento com 15 guerreiros.</li>",
         "<li>Posicione 1 guerreiro em cada clareira do rio.</li>",
@@ -41,54 +354,219 @@
     "birdsong.stock-the-market.html": "Compre cartas e as adicione ao lado direito do Mercado até que ele tenha 5 cartas",
     "birdsong.craft": "Criar",
     "birdsong.craft.html": [
-        "Tente criar a primeira carta adicionada ao Mercado neste turno que apresente um item disponível.<br>",
-        "Se conseguir, marque 1 ponto de vitória e descarte a carta <i>(deixando quatro no Mercado).</i>"],
+        "Tente criar a primeira carta adicionada ao Mercado, neste turno, que apresente um item disponível.<br>",
+        "Se conseguir, marque <img src='./images/vp.png' class='intext'> e descarte a carta <i>(deixando 4 no Mercado).</i>"],
     "birdsong.set-order": "Definir Ordens",
-    "birdsong.set-order.html": [
-        "Qual o naipe da carta mais à direita do Mercado?",
-        "<div class='suit-selector'>",
-        "<label class='suit-label'><input type='radio' id='fox'><img class='suit-img' src='./images/fox.png'></label>",
-        "<label class='suit-label'><input type='radio' id='mouse'><img class='suit-img' src='./images/mouse.png'></label>",
-        "<label class='suit-label'><input type='radio' id='bunny'><img class='suit-img' src='./images/bunny.png'></label>",
-        "<label class='suit-label'><input type='radio' id='bird'><img class='suit-img' src='./images/bird.png'></label>",
-        "</div>"],
+    "birdsong.set-order.html": "Qual o naipe da carta mais à direita do Mercado?${suit-selector}",
     "daylight.build-and-garrison": "Construir e Guarnecer",
     "daylight.build-and-garrison.html": [
-        "Posicione um entreposto comercial e um guerreiro em uma clareira de ${order} que ainda não tenha um entreposto comerecial.<br>",
-        "Preferencialmente, uma clareira com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos."],
+        "Identifique uma clareira de ${order} sem um Entreposto Comercial, ",
+        "preferencialmente com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos.<br>",
+        "Posicione nela um entreposto comercial e um guerreiro."],
     "daylight.build-and-garrison.bird.html": [
-        "Posicione um entreposto comercial e um guerreiro em uma clareira que ainda não tenha um entreposto comerecial.<br>",
-        "Preferencialmente, uma clareira com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos."],
+        "Identifique uma clareira sem um Entreposto Comercial, ",
+        "preferencialmente com peças de facção do jogador que tiver mais guerreiros na caixa de Pagamentos.<br>",
+        "Posicione nela um entreposto comercial e um guerreiro."],
     "daylight.recruit": "Recrutar",
-    "daylight.recruit.html": "Posicione um guerreiro em cada clareira de ${order}, começando pelas de maior prioridade.",
-    "daylight.recruit.bird.html": "Posicione um guerreiro em cada clareira de <b>rio</b>, começando pelas de maior prioridade.",
+    "daylight.recruit.html": "Em cada clareira de ${order}, começando pelas de maior prioridade, posicione um guerreiro.",
+    "daylight.recruit.bird.html": "Em cada clareira de <b>rio</b>, começando pelas de maior prioridade, posicione um guerreiro.",
     "daylight.check-for-protectionism": "Protecionismo",
     "daylight.check-for-protectionism.html": [
-        "Verifique condições:<br>",
+        "Selecione de acordo com as condições:<br>",
         "<label class='switch'><input type='checkbox' id='shield'><span class='slider shield'></span></label>",
-        "<label for='shield'>A caixa de Pagamentos vazia?</label>",
+        "<label for='shield'>Caixa de Pagamentos vazia.</label>",
         "<br>",
         "<label class='switch'><input type='checkbox' id='sword'><span class='slider sword'></span></label>",
-        "<label for='sword'>O suprimento de guerreiros vazio?</label>"],
+        "<label for='sword'>Suprimento de guerreiros vazio.</label>"],
     "daylight.organize": "Organizar",
     "daylight.organize.html": [
-        "Marque um ponto de vitória e posicione dois guerreiros na clareira com mais peças inimigas que tenha peças dos Ribeirinhos."],
+        "<img class='intext' src='./images/riverfolk-shield.png'>",
+        "Marque <img src='./images/vp.png' class='intext'>.<br>Na clareira com peças dos Ribeirinhos que tiver mais peças inimigas, posicione 2 guerreiros."],
+    "daylight.organize.sword.html": [
+        "<img class='intext' src='./images/riverfolk-sword.png'>Marque <img src='./images/vp.png' class='intext'>."],
     "daylight.organize.empty.html": "Sem ação.",
     "daylight.battle": "Batalhar",
     "daylight.battle.html": "Sem ação.",
-    "daylight.battle.shield.html": "Batalhe em cada clareira, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos.",
-    "daylight.battle.sword.html": "Batalle em cada clareira de ${order}, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos",
+    "daylight.battle.shield.html": "<img class='intext' src='./images/riverfolk-shield.png'>Em cada clareira, batalhe, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos.",
+    "daylight.battle.sword.html": "<img class='intext' src='./images/riverfolk-sword.png'>Em cada clareira de ${order}, batalhe, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos",
+    "daylight.battle.sword.bird.html": "<img class='intext' src='./images/riverfolk-sword.png'>Em cada clareira, batalle, preferencialmente contra o jogador com menos guerreiros na caixa de Pagamentos",
     "evening.score": "Pontuar",
     "evening.score.html": [
         "Identifique o jogador com mais guerreiros na caixa de Pagamentos.<br>",
-        "Para cada guerreiro dele, marque um ponto de vitória.<br>",
+        "Para cada guerreiro dele, marque <img src='./images/vp.png' class='intext'>.<br>",
         "Retorne todos estes guerreiros para o suprimento de seu jogador." ],
     "evening.racketeering": "Extorquir",
-    "evening.racketeering.html": ["Em cada clareira, deixe no máximo dois guerreiros dos Ribeirinhos. Coloque os guerreiros removidos na caixa de Pagamentos."],
+    "evening.racketeering.html": [
+        "<img class='intext' src='./images/riverfolk-shield.png'><img class='intext' src='./images/riverfolk-sword.png'>",
+        "Em cada clareira, deixe no máximo 2 guerreiros dos Ribeirinhos. Coloque os guerreiros removidos na caixa de Pagamentos."],
     "evening.racketeering.empty.html": "Sem ação.",
     "evening.discard": "Descartar",
     "evening.discard.html": "Descarte a carta mais à esquerda do Mercado.",
-    "evening.discard.shield.html": "Descarte as duas cartas mais à esquerda do Mercado.",
+    "evening.discard.shield.html": [
+        "Descarte a carta mais à esquerda do Mercado.<br>",
+        "<img class='intext' src='./images/riverfolk-shield.png'>Descarte novamente a carta mais à esquerda do Mercado."],
 
-    "end": "end"
+    "duchy": "Ducado da Broca",
+    "ability.cost-of-errors": "Custo dos Erros",
+    "ability.cost-of-errors.html": ["Sempre que qualquer número de construções do Ducado forem removidas, ",
+        "remova a coroa do ministro mais abaixo da lista."],
+    "ability.the-burrow":"A Toca",
+    "ability.the-burrow.html":[
+        "A Toca é uma clareira que está adjacente a todas as clareiras que possuem um marcador de túnel. ",
+        "Apenas o Ducado pode posicionar peças na Toca ou mover peças para lá. ",
+        "O Ducado sempre governa a Toca <i>(mesmo sem peças lá)</i>."
+    ],
+
+    "setup.duchy": " ",
+    "setup.duchy.html": ["<ol>",
+        "<li>Forme um suprimento com 20 guerreiros, 3 túneis e 9 coroas.</li>",
+        "<li>Posicione a Toca próxima do mapa.</li>",
+        "<li>Escolha uma clareira de canto aleatória, que não seja a clareira inicial de outro Bot e, se possível, diagonalmente oposta. Posicione 2 guerreiros e um Túnel nela. Então posicione 2 guerreiros em cada clareira adjacente.</li>",
+        "<li>Preencha as trilhas de construção com 3 Cidadelas e 3 Mercados.</li>",
+        "<li>Compre 2 cartas e as descarte. Para cada uma delas, posicione uma coroa no primeiro ministro não influenciado correspondente.</li>",
+        "</ol>"],
+    "birdsong.duchy.recruit": "Recrutar",
+    "birdsong.duchy.recruit.html": "Posicione 2 guerreiros na Toca. Posicione guerreiros extra de acordo com a quantidade de Cidadelas construidas (+1, +1, +2).",
+    "daylight.duchy.dig": "Escavar",
+    "daylight.duchy.dig.html": ["Verifique se há 4 ou mais querreiros na Toca.",
+        "<br>Se sim, identifique a clareira de ${order} sem Túnel e sem construções do Ducado que tenha mais espaços livres de contrução e menos guerreiros. ",
+        "<br>Posicione um Túnel nela e mova 4 querreiros da Toca para lá."],
+    "daylight.duchy.dig.bird.html": ["Verifique se há 4 ou mais querreiros na Toca.",
+        "<br>Se sim, identifique a clareira sem Túnel e sem construções do Ducado que tenha mais construções e marcadores inimigos.",
+        "<br>Posicione um Túnel nela e mova 4 querreiros da Toca para lá."],
+    "daylight.duchy.battle": "Batalhar",
+    "daylight.duchy.battle.html":
+        "Em cada clareira de ${order}, batalhe contra o jogador com: mais construções lá, ou mais peças lá ou mais pontos.",
+    "daylight.duchy.battle.bird.html":
+        "Em cada clareira, batalhe contra o jogador com: mais construções lá, ou mais peças lá ou mais pontos.",
+    "daylight.duchy.build": "Construir",
+    "daylight.duchy.build.html": [
+        "Identifique a clareira governada pelo Ducado com mais guerreiros deles.<br>",
+        "Se existirem 9 ou mais guerreiros no suprimento, posicione uma Cidadela lá. Se não, um Mercado.<br>",
+        "Se não for possível construir, mas houver peças de construção disponíveis, marque <img src='./images/vp.png' class='intext'>."
+    ],
+    "daylight.duchy.ministers": "Ações dos Ministros",
+    "daylight.duchy.ministers.html": "Execute as ações dos ministros influenciados, em sequência:",
+    "evening.duchy.rally": "Reunião",
+    "evening.duchy.rally.html": [
+        "Em cada clareira de ${order} sem construções do Ducado e com 2 ou menos guerreiros deles:",
+        "<br>mova estes guerreiros para a clareira adjacente com construções do Ducado que tenha menos guerreiros deles, ",
+        "ou para a Toca, se não existir destino válido.",
+        "<br>Depois, em cada clareira que o Ducado governe, deixe no máximo 4 guerreiros deles, colocando os guerreiros removidos na Toca."
+        ],
+    "evening.duchy.rally.bird.html": [
+        "Em cada clareira sem construções do Ducado e com 2 ou menos guerreiros deles:",
+        "<br>mova estes guerreiros para a clareira adjacente com construções do Ducado que tenha menos guerreiros deles, ",
+        "ou para a Toca, se não existir destino válido.",
+        "<br>Depois, em cada clareira que o Ducado governe, deixe no máximo 4 guerreiros deles, colocando os guerreiros removidos na Toca."
+        ],
+    "evening.duchy.score": "Pontuar",
+    "evening.duchy.score.html": "Marque <img src='./images/vp.png' class='intext'> por Mercado no mapa.",
+    "evening.duchy.sway":"Influenciar",
+    "evening.duchy.sway.html": "Posicione uma coroa no primeiro ministro de ${order} disponível. Se não existir, posicione no último disponível.",
+    "evening.duchy.sway.bird.html":"Posicione uma coroa no último ministro disponível.",
+
+    "ability.minister-selector": "Os Ministros",
+    "ability.minister-selector.html": [
+        "<div id='minister-selector'>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='captain'><span class='slider crown'></span></label><label for='captain'><img src='./images/fox.png' class='intext'> Capitão</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='marshall'><span class='slider crown'></span></label><label for='marshall'><img src='./images/bunny.png' class='intext'> Marechal</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='foremole'><span class='slider crown'></span></label><label for='foremole'><img src='./images/mouse.png' class='intext'> Capataz</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='brigadier'><span class='slider crown'></span></label><label for='brigadier'><img src='./images/fox.png' class='intext'> Brigadeiro</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='banker'><span class='slider crown'></span></label><label for='banker'><img src='./images/bunny.png' class='intext'> Banqueiro</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='mayor'><span class='slider crown'></span></label><label for='mayor'><img src='./images/mouse.png' class='intext'> Prefeito</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='earl'><span class='slider crown'></span></label><label for='earl'><img src='./images/fox.png' class='intext'> Conde da Pedra</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='baron'><span class='slider crown'></span></label><label for='baron'><img src='./images/bunny.png' class='intext'> Barão da Terra</label><br>",
+        "<label class='switch'><input type='checkbox' class='minister-selection-checkbox' id='duchess'><span class='slider crown'></span></label><label for='duchess'><img src='./images/mouse.png' class='intext'> Duquesa da Lama</label><br>",
+        "</div>"
+    ],
+
+    "duchy.ministers.captain.html":  "<b>Capitão:</b> Se a clareira possuir um Túnel, cause 1 dano extra.",
+    "duchy.ministers.marshall.html": "<b>Marechal:</b> Posicione um guerreiro na clareira com menos guerreiros do Ducado e pelo menos uma construção deles.",
+    "duchy.ministers.foremole.html": "<b>Capataz:</b> Posicione mais 1 guerreiro na Toca.",
+    "duchy.ministers.brigadier.html": ["<b>Brigadeiro:</b> (Escavar) ",
+        "Verifique se há 3 ou mais querreiros na Toca.",
+        "<br>Se sim, identifique a clareira de ${order} sem Túnel e sem construções do Ducado com mais construções e marcadores inimigos.",
+        "<br>Posicione um Túnel nela e mova 4 querreiros da Toca para lá."],
+    "duchy.ministers.banker.html": ["<b>Banqueiro:</b> (Construir) ",
+        "Identifique a clareira governada pelo Ducado com mais guerreiros deles.<br>",
+        "Se existirem 9 ou mais guerreiros no suprimento, posicione uma Cidadela lá. Se não, um Mercado.<br>",
+        "Se não for possível construir, mas houver peças de construção disponíveis, marque <img src='./images/vp.png' class='intext'>."
+    ],
+    "duchy.ministers.mayor.html":   "<b>Prefeito:</b> Identifique a clareira governada pelo Ducado com mais guerreiros deles. Se existir, remova um destes guerreiros e marque <img src='./images/vp.png' class='intext'>.",
+    "duchy.ministers.earl.html":    "<b>Conde da Pedra:</b> Marque <img src='./images/vp.png' class='intext'> por Cidadela no mapa.",
+    "duchy.ministers.baron.html":   "<b>Barão da Terra:</b> Marque <img src='./images/vp.png' class='intext'> por Mercado no mapa.",
+    "duchy.ministers.duchess.html": "<b>Duquesa da Lama:</b> Marque <img src='./images/vp.png' class='intext'><img src='./images/vp.png' class='intext'> se todos os túneis estiverem no mapa.",
+
+    "conspiracy": "Engrenagens Corvídeas",
+    "ability.plots": "Tramas",
+    "ability.plots.html": [
+        "<img src='./images/corvid-bomb.png' class='intext'> Quando revelado, remova todas as peças inimigas da clareira. Depois troque ela por outra Trama aleatória, com a face para cima. <i>(Ela não dispara efeitos.)</i>",
+        "<br>",
+        "<img src='./images/corvid-snare.png' class='intext'> Enquanto estiver virado para cima, peças inimigas não podem ser posicionadas nesta clareira, nem movidas para fora dela.",
+        "<br>",
+        "<img src='./images/corvid-extorsion.png' class='intext'> Quando revelado, cada jogador com peças na clareira precisa descartar uma carta. Dá <img src='./images/vp.png' class='intext'> no Anoitecer.",
+        "<br>",
+        "<img src='./images/corvid-raid.png' class='intext'> Quando for removido, posicione um guerreiro em cada clareira adjacente."
+    ],
+    "ability.embedded-agents": "Agentes Infiltrados",
+    "ability.embedded-agents.html": "Como defensor em batalhas, se houver um marcador de Trama virado para baixo na clareira, cause 1 dano extra",
+
+    "setup.conspiracy": " ",
+    "setup.conspiracy.html": ["<ol>",
+        "<li>Forme um suprimento com 15 guerreiros e 8 marcadores de Trama, virados para baixo.</li>",
+        "<li>Posicione 1 guerreiro na clareira de menor prioridade de cada naipe.</li>",
+        "</ol>"],
+
+    "birdsong.conspiracy.recruit": "Recrutar",
+    "birdsong.conspiracy.recruit.html": [
+        "Identifique as 2 clareiras de ${order} sem Tramas com mais guerreiros Corvídeos.",
+        "<br>Posicione 2 guerreiros em cada uma delas.",
+        "<br>Se, durante a execução, não houver mais guerreiros disponíveis para posicionar, <i>a Trama se Complica</i>:"
+    ],
+    "birdsong.conspiracy.recruit.bird.html": [
+        "Identifique as 2 clareiras sem Tramas com mais guerreiros Corvídeos.",
+        "<br>Posicione 2 guerreiros em cada uma delas.",
+        "<br>Se, durante a execução, não houver guerreiros disponíveis para posicionar, <i>a Trama se Complica</i>:"
+    ],
+    "birdsong.conspiracy.flip": "Revelar Tramas",
+    "birdsong.conspiracy.flip.html": [
+        "Revele todas as Tramas ocultas no mapa.",
+        "<br>A cada revelação, marque <img src='./images/vp.png' class='intext'> por Trama revelada no mapa e resolva seu efeito."],
+    "daylight.conspiracy.battle": "Batalhar",
+    "daylight.conspiracy.battle.html": [
+        "Em cada clareira de ${order} que tenha 2 ou mais guerreiros Corvídeos, ",
+        "batalhe contra o jogador com mais construções e marcadores lá ou, em caso de empate, com mais pontos."],
+    "daylight.conspiracy.battle.bird.html": [
+        "Em cada clareira que tenha 2 ou mais guerreiros Corvídeos, ",
+        "batalhe contra o jogador com mais construções e marcadores lá ou, em caso de empate, com mais pontos."],
+    "daylight.conspiracy.move": "Mover",
+    "daylight.conspiracy.move.html": [
+        "A partir de cada clareira de ${order} com Tramas reveladas, mova todos menos 2 guerreiros para a clareira ",
+        "adjacente sem Trama com mais guerreiros Corvídeos.",
+        "<br>Se todas as clareiras adjacentes tiverem Tramas, mova para a de menor prioridade."
+    ],
+    "daylight.conspiracy.move.bird.html": [
+        "A partir de cada clareira com Tramas reveladas, mova todos menos 2 guerreiros para a clareira ",
+        "adjacente sem Trama com mais guerreiros Corvídeos.",
+        "<br>Se todas as clareiras adjacentes tiverem Tramas, mova para a de menor prioridade."
+    ],
+    "daylight.conspiracy.plot": "Tramar",
+    "daylight.conspiracy.plot.html": [
+        "Identifique a clareira de ${order} sem Trama que tenha mais guerreiros Corvídeos.",
+        "<br>Remova 1 deles e posicione uma Trama aleatória, com a face para baixo."
+    ],
+    "daylight.conspiracy.plot.bird.html": [
+        "Identifique a clareira sem Trama que tenha mais guerreiros Corvídeos.",
+        "<br>Remova 1 deles e posicione uma Trama aleatória, com a face para baixo."
+    ],
+    "daylight.conspiracy.thickens": "A Trama se Complica",
+    "daylight.conspiracy.thickens.html": [
+        "Identifique a clareira sem Trama que tenha mais guerreiros Corvídeos.",
+        "<br>Se ela tiver 3 ou mais deles, remova 1 e posicione uma Trama aleatória, com a face para baixo."
+    ],
+    "evening.conspiracy.score": "Pontuar",
+    "evening.conspiracy.score.html": "Marque <img src='./images/vp.png' class='intext'> para cada <img src='./images/corvid-extorsion.png' class='intext'> no mapa.",
+
+    "end":""
 }
